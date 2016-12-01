@@ -10,13 +10,15 @@ import PortfolioItem from './modules/PortfolioItem';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      containerType: 'container', // optionally add -fluid
+    };
   }
   render() {
     return (
       <div>
-        <Nav location={this.props.location} />
-        <div className="container">
+        <Nav location={this.props.location} containerType={this.state.containerType} />
+        <div className={this.state.containerType}>
           {this.props.children}
         </div>
       </div>

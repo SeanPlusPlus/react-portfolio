@@ -20,9 +20,10 @@ class Nav extends React.Component {
   }
   render() {
     const pathname = this.props.location.pathname;
+    const containerType = this.props.containerType;
     return (
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container">
+        <div className={containerType}>
           <div className="navbar-header">
             <Link to={'/'} className="navbar-brand">
               Sean Plus Plus
@@ -47,6 +48,7 @@ class Nav extends React.Component {
 
 Nav.propTypes = {
   location: React.PropTypes.object,
+  containerType: React.PropTypes.string,
 };
 
 export default Nav;
